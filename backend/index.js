@@ -1,5 +1,6 @@
 'use strict';
 const express = require('express');
+const cors = require('cors');
 const PORT = process.env.NODE_PORT;
 const app = express();
 app.listen(PORT);
@@ -13,6 +14,7 @@ const session = require('express-session');
             uri: MONGO_URI,
             collection: 'sessions'
         });
+        app.use(cors());
         app.use(
             session({
                 secret: 'secret string',
