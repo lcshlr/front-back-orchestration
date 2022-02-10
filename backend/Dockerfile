@@ -2,7 +2,7 @@ FROM node
 
 WORKDIR /api
 
-COPY * ./
+COPY . ./
 
 RUN npm install
 
